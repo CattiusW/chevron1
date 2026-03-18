@@ -1,4 +1,4 @@
-// COMBINED ICONS AND CONFIG
+// COMPLETE CONSOLIDATED CONFIGURATION
 window.ICONS = {
   classroom: '<svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4v2h14V4H5zm11 9v-2H8v2h8zm3-10H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 11h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>',
   wikipedia: '<svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="currentColor"><path d="M12.09 4.41L9.12 13.91 6.13 4.41H4L8 16.59l-1 3.23h2.17l1-3.23 3.08-9.59L16.33 16.59l1 3.23h2.17l-1-3.23 4-12.18z"/></svg>',
@@ -11,12 +11,12 @@ window.ICONS = {
 
 window.CONFIG = {
   macros: [
-    { category: 'Education', name: 'Classroom', icon: 'classroom', triggers: ['c', 'class', 'classroom'], url: 'https://google.com', normalisedURL: '://google.com', bgColor: { type: 'solid', color: '#1a73e8' }, textColor: '#fff', pinned: true },
-    { category: 'Education', name: 'Wikipedia', icon: 'wikipedia', triggers: ['w', 'wiki', 'wikipedia'], url: 'https://wikipedia.org', normalisedURL: 'wikipedia.org', commands: { search: { template: '{@}/?search={$}' }, go: { template: '{@}/wiki/{$}' } }, bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#e1e1e3', '#bbb'], stops: [60, 100] }, textColor: '#000', pinned: true },
+    { category: 'Education', name: 'Classroom', icon: 'classroom', triggers: ['c', 'class', 'classroom'], url: 'https://classroom.google.com', normalisedURL: 'classroom.google.com', bgColor: { type: 'solid', color: '#1a73e8' }, textColor: '#fff', pinned: true },
+    { category: 'Education', name: 'Wikipedia', icon: 'wikipedia', triggers: ['w', 'wiki', 'wikipedia'], url: 'https://wikipedia.org', normalisedURL: 'wikipedia.org', commands: { search: { template: '{@}/?search={$}' }, go: { template: '{@}/wiki/{$}' } }, bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#e1e1e3', '#bbb'], stops: [0, 100] }, textColor: '#000', pinned: true },
     { category: 'Entertainment', name: 'Youtube', triggers: ['y', 'yt', 'youtube'], key: 'KeyY', icon: 'youtube', url: 'https://youtube.com', normalisedURL: 'youtube.com', commands: { go: { template: 'https://youtu.be{$}', description: 'gotovideo' }, search: { template: '{@}/results?search_query={$}' } }, bgColor: { type: 'solid', color: '#f30002' }, textColor: '#212121', pinned: true },
     { category: 'Programming', name: 'GitHub', icon: 'github', url: 'https://github.com', normalisedURL: 'github.com', triggers: ['g', 'git', 'github'], key: 'KeyG', commands: { go: { template: '{@}/{$}', description: 'gotouser' }, search: { template: '{@}/search?q={$}' } }, bgColor: { type: 'solid', color: '#171515' }, textColor: '#e8e8e8', pinned: true },
     { category: 'Programming', name: 'StackOverflow', icon: 'stackoverflow', url: 'https://stackoverflow.com', normalisedURL: 'stackoverflow.com', triggers: ['s', 'st', 'so', 'stack', 'stackoverflow'], key: 'KeyS', commands: { search: { template: '{@}/search?q={$}' }, go: { template: '{@}/questions/{$}', description: 'gotoquestion' } }, bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#e87922', '#ffbe25'], stops: [0, 100] }, textColor: '#212121', pinned: true },
-    { category: 'Other', name: 'Translate', icon: 'translate', url: 'https://google.com', normalisedURL: '://google.com', triggers: ['t', 'translate'], key: 'KeyT', commands: { search: { template: '{@}/?text={$}', description: 'translatetext' } }, bgColor: { type: 'gradient', gradientType: 'linear', angle: 45, colors: ['#508bed', '#4654b4'] }, textColor: '#fff', pinned: true },
+    { category: 'Other', name: 'Translate', icon: 'translate', url: 'https://translate.google.com', normalisedURL: 'translate.google.com', triggers: ['t', 'translate'], key: 'KeyT', commands: { search: { template: '{@}/?text={$}', description: 'translatetext' } }, bgColor: { type: 'gradient', gradientType: 'linear', angle: 45, colors: ['#508bed', '#4654b4'] }, textColor: '#fff', pinned: true },
     { category: 'Music', name: 'spotify', icon: 'spotify', url: 'https://spotify.com', normalisedURL: 'spotify.com', triggers: ['music', 'sp', 'sfy', 'spo', 'spotify'], commands: { search: { template: '{@}/search/{$}' }, go: { template: '{@}/track/{$}', description: 'gototrack' } }, bgColor: { type: 'solid', color: '#1ccc5b' }, textColor: '#000', pinned: true }
   ],
   commands: [
