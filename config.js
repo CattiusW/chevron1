@@ -10,17 +10,132 @@ window.CONFIG = {
     { category: 'Shopping', name: 'Amazon', triggers: ['a', 'am', 'amz', 'amazon'], icon: 'amazon', key: 'KeyA', url: 'https://amazon.com', normalisedURL: 'amazon.com', bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#f29100', '#fff'], stops: [0, 80] }, textColor: '#000', pinned: true },
     { category: 'Education', name: 'Wikipedia', icon: 'wikipedia', triggers: ['w', 'wiki', 'wikipedia'], url: 'https://wikipedia.org', normalisedURL: 'wikipedia.org', commands: { search: { template: '{@}/?search={$}' }, go: { template: '{@}/wiki/{$}' } }, bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#e1e1e3', '#bbb'], stops: [60, 100] }, textColor: '#000', pinned: true },
     { category: 'Calendar', name: 'SOCS', triggers: ['socs', 's', 'calendar', 'cms', 'sock'], url: 'https://www.socscms.com/login/161/pupil', normalisedURL: 'www.socscms.com/login/161/pupil', bgColor: { type: 'solid', color: '#e37151' }, textColor: '#e8e8e8' },
-    { category: 'To Do', name: 'Classroom', triggers: ['classroom', 'c', 'class', 'gclass', 'classroom'], url: 'https://classroom.google.com', normalisedURL: 'classroom.google.com', bgColor: { type: 'solid', color: '#e37151' }, textColor: '#e8e8e8' },
+    { category: 'To Do', name: 'Classroom', triggers: ['classroom', 'c', 'class', 'gclass', 'classroom'], url: 'https://classroom.google.com/a/not-turned-in/all', normalisedURL: 'classroom.google.com/a/not-turned-in/all', bgColor: { type: 'solid', color: '#e37151' }, textColor: '#e8e8e8' },
+    { category: 'To Do', name: 'To Do', triggers: ['todo', 'td', 't', 'to do', 'tpdo'], url: 'https://classroom.google.com', normalisedURL: 'classroom.google.com', bgColor: { type: 'solid', color: '#e37151' }, textColor: '#e8e8e8' },
     { category: 'Search', name: 'Bing', triggers: ['b', 'bing'], url: 'https://bing.com', normalisedURL: 'bing.com', commands: { search: { template: '{@}/search?q={$}' } }, bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#3ab0f1', '#2351dd', '#40d1da'] }, textColor: '#e8e8e8' }
   ],
   commands: [
     { type: 'search', trigger: '?' },
     { type: 'go', trigger: '/' }
   ],
-  engines: {
-    google: { name: 'Google', bgColor: { type: 'solid', color: '#aaa' }, textColor: '#fff', types: { query: { template: 'https://google.com{$}' }, calculator: { template: 'https://google.com{@}' }, currency: { template: 'https://google.com{@}' } } },
-    duckDuckGo: { name: 'DuckDuckGo', bgColor: { type: 'solid', color: '#e37151' }, textColor: '#e8e8e8', types: { query: { template: 'https://duckduckgo.com{$}' }, calculator: { template: 'https://duckduckgo.com{@}' }, currency: { template: 'https://duckduckgo.com{@}' } } },
-    bing: { name: 'Bing', bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#3ab0f1', '#2351dd', '#40d1da'] }, textColor: '#e8e8e8', types: { query: { template: 'https://bing.com/search?q={$}' }, calculator: { template: 'https://bing.com/search?q={@}' }, currency: { template: 'https://bing.com/search?q={@}' } } },
-    brave: { name: 'Brave', bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#FB542B', '#343546'] }, textColor: '#e8e8e8', types: { query: { template: 'https://brave.com{$}' }, calculator: { template: 'https://brave.com{@}' }, currency: { template: 'https://brave.com{@}' } } }
+   engines: {
+      google: {
+        name: 'Google',
+        bgColor: {
+          type: 'solid',
+          color: '#aaa'
+        },
+        textColor: '#fff',
+        types: {
+          // @ - origin query (what user typed); $ - final query (what is in the query field (selected))
+          query: {
+            template: 'https://www.google.com/search?q={$}'
+          },
+          calculator: {
+            template: 'https://www.google.com/search?q={@}'
+          },
+          currency: {
+            template: 'https://www.google.com/search?q={@}'
+          }
+        }
+      },
+      duckDuckGo: {
+        name: 'DuckDuckGo',
+        bgColor: {
+          type: 'solid',
+          color: '#e37151'
+        },
+        textColor: '#e8e8e8',
+        types: {
+          query: {
+            template: 'https://duckduckgo.com/?q={$}'
+          },
+          calculator: {
+            template: 'https://duckduckgo.com/?q={@}'
+          },
+          currency: {
+            template: 'https://duckduckgo.com/?q={@}'
+          }
+        }
+      },
+      yandex: {
+        name: 'Yandex',
+        bgColor: {
+          type: 'solid',
+          color: '#fc3f1d'
+        },
+        textColor: '#000',
+        types: {
+          query: {
+            template: 'https://ya.ru/search/?text={$}'
+          },
+          calculator: {
+            template: 'https://ya.ru/search/?text={@}'
+          },
+          currency: {
+            template: 'https://ya.ru/search/?text={@}'
+          }
+        }
+      },
+      qwant: {
+        name: 'Qwant',
+        bgColor: {
+          type: 'solid',
+          color: '#5992f7'
+        },
+        textColor: '#000',
+        types: {
+          query: {
+            template: 'https://www.qwant.com/?q={$}'
+          },
+          calculator: {
+            template: 'https://www.qwant.com/?q={@}'
+          },
+          currency: {
+            template: 'https://www.qwant.com/?q={@}'
+          }
+        }
+      },
+      bing: {
+        name: 'Bing',
+        bgColor: {
+          type: 'gradient',
+          gradientType: 'linear',
+          colors: ['#3ab0f1', '#2351dd', '#40d1da']
+        },
+        textColor: '#e8e8e8',
+        types: {
+          query: {
+            template: 'https://www.bing.com/search?q={$}'
+          },
+          calculator: {
+            template: 'https://www.bing.com/search?q={@}'
+          },
+          currency: {
+            template: 'https://www.bing.com/search?q={@}'
+          }
+        }
+      },
+      brave: {
+        name: 'Brave',
+        bgColor: {
+          type: 'gradient',
+          gradientType: 'linear',
+          colors: ['#FB542B', '#343546']
+        },
+        textColor: '#e8e8e8',
+        types: {
+          query: {
+            template: 'https://search.brave.com/search?q={$}'
+          },
+          calculator: {
+            template: 'https://search.brave.com/search?q={@}'
+          },
+          currency: {
+            template: 'https://search.brave.com/search?q={@}'
+          }
+        }
+      }
+    }
   }
 };
