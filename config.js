@@ -11,6 +11,7 @@ window.CONFIG = {
     { category: 'Education', name: 'Wikipedia', icon: 'wikipedia', triggers: ['w', 'wiki', 'wikipedia'], url: 'https://www.wikipedia.org', normalisedURL: 'wikipedia.org', commands: { search: { template: '{@}/?search={$}' }, go: { template: '{@}/wiki/{$}' } }, bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#e1e1e3', '#bbb'], stops: [60, 100] }, textColor: '#000', pinned: true },
     { category: 'Calendar', name: 'SOCS', triggers: ['socs', 'c', 'calendar', 'cms', 'sock'], url: 'https://www.socscms.com/login/161?', normalisedURL: 'www.socscms.com/login/161?', bgColor: { type: 'solid', color: '#e37151' }, textColor: '#e8e8e8' },
     { category: 'Search', name: 'Bing', triggers: ['b', 'bing'], url: 'https://www.bing.com', normalisedURL: 'bing.com', commands: { search: { template: '{@}/search?q={$}' } }, bgColor: { type: 'gradient', gradientType: 'linear', colors: ['#3ab0f1', '#2351dd', '#40d1da'] }, textColor: '#e8e8e8' },
+  ]
   commands: [
     { type: 'search', trigger: '?' },
     { type: 'go', trigger: '/' }
